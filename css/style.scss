@@ -393,7 +393,7 @@ a:hover {
 .navbar {
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: -65px;
 	width: 100%;
 	background: transparent;
 	z-index: 9;
@@ -404,7 +404,7 @@ a:hover {
 	}
 
 	.navbar-nav {
-		margin-left: 50%;
+
 
 		.nav-link {
 			font-size: 18px;
@@ -451,8 +451,11 @@ a:hover {
 }
 
 .logo {
-	padding: 15px 0;
-	width: 100px;
+	padding: 0 0 0px 65px;
+
+	img {
+		width: 40%;
+	}
 }
 
 /* ----------------------------------------------------------------
