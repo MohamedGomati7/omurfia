@@ -72,6 +72,32 @@ h6 {
   font-family: 'Barlow Condensed', sans-serif;
 }
 
+.owl-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.owl-dot {
+  border-radius: 50%;
+  width: 19.6px;
+  background: #628925;
+  margin: 16px 8px;
+  border: 2px solid #628925;
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #628925;
+}
+
+.owl-dot.active {
+  background-color: #c7e1ac !important;
+}
+
 p {
   font-size: 20px;
   font-weight: 400;
@@ -288,14 +314,12 @@ a:hover {
 -----------------------------------------------------------------*/
 .butn {
   padding: 17px 30px;
-  border: 1px solid #eee;
   border-radius: 4px;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;
   position: relative;
-  margin: 30px 2px 0;
   -webkit-animation-delay: 1.2s;
           animation-delay: 1.2s;
 }
@@ -333,9 +357,15 @@ a:hover {
   z-index: 2;
 }
 
+.butn-primary {
+  background: #628925;
+  border: 1px solid #628925;
+  color: #fff;
+  font-weight: 700;
+}
+
 .butn-bg {
   background: #ecd6c8;
-  border: 2px solid #866f60;
   color: #393939;
   font-weight: 700;
 }
@@ -366,10 +396,13 @@ a:hover {
 /* ----------------------------------------------------------------
      [ 02 Start Navbar ]
 -----------------------------------------------------------------*/
+.nav-container {
+  height: 100px;
+}
+
 .navbar {
   position: absolute;
   left: 0;
-  top: -65px;
   width: 100%;
   background: transparent;
   z-index: 9;
@@ -380,8 +413,12 @@ a:hover {
   color: #fff;
 }
 
+.navbar .navbar-nav {
+  margin-left: 8rem;
+}
+
 .navbar .navbar-nav .nav-link {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #393939;
   letter-spacing: .5px;
@@ -423,12 +460,13 @@ a:hover {
   color: #111;
 }
 
-.logo {
-  padding: 0 0 0px 65px;
+.footer-logo {
+  width: 85% !important;
 }
 
 .logo img {
   width: 40%;
+  height: 75%;
 }
 
 /* ----------------------------------------------------------------
@@ -438,7 +476,6 @@ a:hover {
      [ 04 Start Header ]
 -----------------------------------------------------------------*/
 .header {
-  min-height: 90vh;
   overflow: hidden;
 }
 
@@ -546,10 +583,6 @@ a:hover {
   position: absolute;
   bottom: 5vh;
   width: 100%;
-}
-
-.creative {
-  min-height: 90vh;
 }
 
 .creative .svg {
@@ -1368,9 +1401,29 @@ a:hover {
 /* ----------------------------------------------------------------
      [ End Price ]
 -----------------------------------------------------------------*/
+.nav-link.active {
+  border-color: #628925 #628925 #fff !important;
+  color: #628925 !important;
+}
+
 /* ----------------------------------------------------------------
      [ 14 Start Blog ]
 -----------------------------------------------------------------*/
+.product-desc {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Hind', sans-serif;
+  color: #909090;
+  /* line-height: 1.9; */
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.bg-pattern {
+  background-image: url(../img/pattern-bg.svg);
+}
+
 .blog {
   position: relative;
 }
@@ -1680,6 +1733,69 @@ footer p {
 /* ----------------------------------------------------------------
  	 [ 19 Responsive ]
 -----------------------------------------------------------------*/
+@media screen and (max-width: 430px) {
+  .hero-image {
+    height: 60vh;
+    overflow: hidden;
+  }
+  .product-desc {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+  .feat .item .icon {
+    width: 40%;
+  }
+  .feat .item {
+    padding: 10px 10px;
+  }
+  .creative {
+    height: 100vh;
+  }
+  .creative .hero-row {
+    height: 100vh;
+  }
+  .creative .hero-row img {
+    height: 65vh;
+  }
+  .creative .hero-row .hero-intro {
+    height: 50vh;
+  }
+  .creative .hero-row .hero-intro .intro {
+    -webkit-transform: translateY(0%) !important;
+            transform: translateY(0%) !important;
+  }
+  .header .caption h1 {
+    font-size: 35px !important;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 430px) {
+  .creative {
+    height: 60vh !important;
+  }
+  .hero-image {
+    overflow: hidden;
+  }
+  .hero-row {
+    height: 60vh;
+  }
+  .hero-row img {
+    height: 60vh;
+    width: 140%;
+  }
+  .hero-intro {
+    padding: 30px;
+  }
+  .hero-intro .intro {
+    -webkit-transform: translateY(30%);
+            transform: translateY(30%);
+  }
+  .hero-intro .intro h1 {
+    font-size: 70px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1200px;
@@ -1699,13 +1815,15 @@ footer p {
   .bg-fixed {
     background-attachment: scroll !important;
   }
-  .navbar {
-    padding-left: 15px;
+  .nav-row {
+    margin-right: -15px;
+    width: 100%;
+    margin-left: 0px;
   }
   .navbar .navbar-collapse {
     max-height: 340px;
     overflow: auto;
-    background: #111;
+    background: #f7f7f7;
     text-align: center;
     padding: 10px 0;
   }
@@ -1726,8 +1844,11 @@ footer p {
     font-size: 30px;
   }
   .header .caption h1 {
-    font-size: 80px;
+    font-size: 50px;
     line-height: 1.4;
+  }
+  .header .caption h1 p {
+    font-size: 16px;
   }
   .hero .h-img {
     padding-left: 0;
@@ -1757,6 +1878,12 @@ footer p {
 }
 
 @media screen and (max-width: 767px) {
+  .logo {
+    padding: 0;
+  }
+  .logo img {
+    width: 75%;
+  }
   .mb-sm50 {
     margin-bottom: 50px;
   }

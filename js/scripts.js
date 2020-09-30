@@ -22,13 +22,13 @@ $(function () {
     -----------------------------------------------------------------*/
 
     $.scrollIt({
-        upKey: 38,                // key code to navigate to the next section
-        downKey: 40,              // key code to navigate to the previous section
-        easing: 'swing',          // the easing function for animation
-        scrollTime: 600,          // how long (in ms) the animation takes
-        activeClass: 'active',    // class given to the active nav element
-        onPageChange: null,       // function(pageIndex) that is called when page is changed
-        topOffset: -80            // offste (in px) for fixed top navigation
+        upKey: 38, // key code to navigate to the next section
+        downKey: 40, // key code to navigate to the previous section
+        easing: 'swing', // the easing function for animation
+        scrollTime: 600, // how long (in ms) the animation takes
+        activeClass: 'active', // class given to the active nav element
+        onPageChange: null, // function(pageIndex) that is called when page is changed
+        topOffset: -80 // offste (in px) for fixed top navigation
     });
 
 
@@ -47,13 +47,13 @@ $(function () {
         if (bodyScroll > 100) {
 
             navbar.addClass("nav-scroll");
-            logo.attr('src', 'img/logo-dark.png');
+            logo.attr('src', 'img/omurfia-logo.png');
 
         } else {
 
             navbar.removeClass("nav-scroll");
-            logo.attr('src', 'img/logo-light.png');
-            navbloglogo.attr('src', 'img/logo-dark.png');
+            logo.attr('src', 'img/omurfia-logo.png');
+            navbloglogo.attr('src', 'img/omurfia-logo.png');
         }
     });
 
@@ -213,7 +213,9 @@ $(window).on("load", function () {
 
         var filterValue = $(this).attr('data-filter');
 
-        $gallery.isotope({ filter: filterValue });
+        $gallery.isotope({
+            filter: filterValue
+        });
 
     });
 
@@ -256,7 +258,7 @@ $(window).on("load", function () {
 });
 
 // Slider 
-$(document).ready(function() {
+$(document).ready(function () {
 
     var owl = $('.header .owl-carousel');
 
@@ -264,24 +266,24 @@ $(document).ready(function() {
     // Slider owlCarousel
     $('.slider .owl-carousel').owlCarousel({
         items: 1,
-        loop:true,
+        loop: true,
         margin: 0,
-        autoplay:true,
-        smartSpeed:1000
+        autoplay: true,
+        smartSpeed: 1000
     });
 
     // Slider owlCarousel
     $('.slider-fade .owl-carousel').owlCarousel({
         items: 1,
-        loop:true,
+        loop: true,
         margin: 0,
-        autoplay:true,
-        smartSpeed:500,
+        autoplay: true,
+        smartSpeed: 500,
         animateOut: 'fadeOut'
     });
 
-    owl.on('changed.owl.carousel', function(event) {
-        var item = event.item.index - 2;     // Position of the current item
+    owl.on('changed.owl.carousel', function (event) {
+        var item = event.item.index - 2; // Position of the current item
         $('h4').removeClass('animated fadeInLeft');
         $('h1').removeClass('animated fadeInRight');
         $('p').removeClass('animated fadeInUp');
